@@ -2,10 +2,10 @@
   "name": "site-noesa",
   "version": "1.0.0",
   "description": "Site oficial para o instituto",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node index.js",
+    "dev": "node index.js",
     "postinstall": "prisma generate"
   },
   "author": "Carlos Quitumba",

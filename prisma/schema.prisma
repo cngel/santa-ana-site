@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model price {
+  id                  Int    @id @default(autoincrement())
+  matricula           Float? @db.Float
+  propina             Float? @db.Float
+  manual              Float? @db.Float
+  cartao              Float? @db.Float
+  uniforme_puniv      Float? @db.Float
+  uniforme_enfermagem Float? @db.Float
+}

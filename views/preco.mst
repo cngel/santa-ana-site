@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preços e Propinas — Instituto Médio Politécnico Santa Ana e Noesa</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="public/css/preco.css">
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header id="header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="logo">
+          <img src="public/img/logo.jfif" alt="logo" style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+          <div class="logo-text">
+            <strong>Colégio Santa ana & Noesa</strong>
+            <small>Inst. Médio Politécnico Santa Ana e Noesa</small>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="index.html#cursos">Cursos</a></li>
+            <li><a href="precos.html" class="active">Preços</a></li>
+            <li><a href="laboratorios.html">Instalações</a></li>
+            <li><a href="index.html#footer">Contactos</a></li>
+          </ul>
+        </nav>
+
+        <a href="index.html#cta" class="btn-primary header-cta">Inscrever-se</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="index.html#cursos">Cursos</a></li>
+        <li><a href="precos.html">Preços</a></li>
+        <li><a href="laboratorios.html">Instalações</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="index.html#cta" class="btn-primary">Inscrever-se</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PAGE HERO
+  ============================================================ -->
+  <section id="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-geo"></div>
+    <div class="page-hero-line"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="index.html">Início</a>
+          <span class="sep"></span>
+          <span class="current">Preços e Propinas</span>
+        </nav>
+        <h1 class="page-hero-title">Preços e<br /><span>Propinas</span></h1>
+        <p class="page-hero-sub">
+          Transparência total em todos os custos associados à sua formação. Consulte os valores actualizados para o ano
+          lectivo 2025 / 2026.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AVISO STRIP
+  ============================================================ -->
+  <div id="aviso-strip">
+    <div class="container">
+      <div class="aviso-inner">
+        <div class="aviso-icon">
+          <svg viewBox="0 0 18 18" fill="none">
+            <circle cx="9" cy="9" r="7.5" stroke="#C7A56B" stroke-width="1.4" />
+            <path d="M9 8v4M9 6h.01" stroke="#C7A56B" stroke-width="1.6" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div>
+          <strong>Tabela de preços válida para o Ano Lectivo 2025 / 2026.</strong>
+          <span> Os valores apresentados estão em Kwanzas (Kz) e podem ser actualizados pela direcção do instituto. Para
+            dúvidas, contacte a secretaria.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CATEGORIAS RAPIDAS
+  ============================================================ -->
+  <section id="intro-cats">
+    <div class="container">
+      <div class="intro-cats-header reveal">
+        <span class="section-label">Resumo de Custos</span>
+        <h2 class="section-title">Todas as <span>categorias</span><br />num só lugar</h2>
+        <p>Clique numa categoria para navegar directamente para os detalhes do respectivo custo.</p>
+      </div>
+
+      <div class="cats-grid reveal">
+
+        <a href="#tabela" class="cat-card" id="cat-propina">
+          <div class="cat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="5" width="20" height="14" rx="2" stroke="#1F4E79" stroke-width="1.7" />
+              <circle cx="12" cy="12" r="3" stroke="#1F4E79" stroke-width="1.7" />
+              <path d="M6 12h.01M18 12h.01" stroke="#1F4E79" stroke-width="1.7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="cat-name">Propina</div>
+          <div class="cat-label">Mensal</div>
+        </a>
+
+        <a href="#tabela" class="cat-card" id="cat-prova">
+          <div class="cat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="2" width="16" height="20" rx="2" stroke="#1F4E79" stroke-width="1.7" />
+              <path d="M8 7h8M8 11h8M8 15h5" stroke="#1F4E79" stroke-width="1.7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="cat-name">Folha de Prova</div>
+          <div class="cat-label">Por exame</div>
+        </a>
+
+        <a href="#tabela" class="cat-card" id="cat-manual">
+          <div class="cat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4 4h16v16H4z" stroke="#1F4E79" stroke-width="1.7" stroke-linejoin="round" />
+              <path d="M4 4l8 8 8-8M4 20l8-8 8 8" stroke="#1F4E79" stroke-width="1.7" stroke-linecap="round" />
+              <path d="M3 3h18M3 21h18" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+              <path d="M3 3a16 16 0 0 0 9 18A16 16 0 0 0 21 3" stroke="none" />
+              <!-- Livro -->
+              <path d="M6 4v16M12 4v16" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="cat-name">Manual</div>
+          <div class="cat-label">Por disciplina</div>
+        </a>
+
+        <a href="#tabela" class="cat-card" id="cat-cartao">
+          <div class="cat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="5" width="20" height="14" rx="2" stroke="#1F4E79" stroke-width="1.7" />
+              <circle cx="8" cy="10" r="2.5" stroke="#1F4E79" stroke-width="1.5" />
+              <path d="M6 15h4M14 9h4M14 12h3M14 15h2" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="cat-name">Cartão Escolar</div>
+          <div class="cat-label">Emissão / 2ª via</div>
+        </a>
+
+        <a href="#tabela" class="cat-card" id="cat-matricula">
+          <div class="cat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="17" rx="2" stroke="#1F4E79" stroke-width="1.7" />
+              <path d="M8 2v4M16 2v4M3 10h18" stroke="#1F4E79" stroke-width="1.7" stroke-linecap="round" />
+              <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" stroke="#1F4E79" stroke-width="2"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="cat-name">Matrícula</div>
+          <div class="cat-label">Anual</div>
+        </a>
+
+        <a href="#tabela" class="cat-card" id="cat-confirmacao">
+          <div class="cat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#1F4E79"
+                stroke-width="1.7" />
+              <path d="M8 12l3 3 5-5" stroke="#1F4E79" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="cat-name">Confirmação de Matrícula</div>
+          <div class="cat-label">Anual</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TABELA DE PRECOS
+  ============================================================ -->
+  <section id="tabela">
+    <div class="container">
+
+      <div class="tabela-header reveal">
+        <div class="tabela-header-text">
+          <span class="section-label">Tabela Completa</span>
+          <h2 class="section-title">Preços <span>detalhados</span></h2>
+        </div>
+        <div class="ano-selector">
+          Ano Lectivo
+          <span class="ano-badge">2025 / 2026</span>
+        </div>
+      </div>
+
+      <div class="price-table-wrap reveal">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Item / Descrição</th>
+              <th class="th-period">Periodicidade</th>
+              <th class="th-curso">Curso</th>
+              <th class="th-valor">Valor (Kz)</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- GRUPO: MATRÍCULA -->
+            <tr class="tr-group-header">
+              <td colspan="4">Actos de Matrícula e Inscrição</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="2" y="3" width="14" height="13" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <path d="M6 2v3M12 2v3M2 8h14" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Matrícula</div>
+                    <div class="td-item-desc">Inscrição inicial no início de cada ano lectivo</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Anual</span></td>
+              <td><span class="curso-pill todos">Todos os cursos</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{matricula}},00 Kz</span>
+                  <span class="valor-unit">por ano</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="tr-highlight">
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <circle cx="9" cy="9" r="7" stroke="#1F4E79" stroke-width="1.4" />
+                      <path d="M6 9l2.5 2.5L12 7" stroke="#1F4E79" stroke-width="1.6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Confirmação de Matrícula</div>
+                    <div class="td-item-desc">Taxa de confirmação e reserva de vaga</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Anual</span></td>
+              <td><span class="curso-pill todos">Todos os cursos</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{matricula}},00 Kz</span>
+                  <span class="valor-unit">por ano</span>
+                </div>
+              </td>
+            </tr>
+
+            <!-- GRUPO: PROPINAS -->
+            <tr class="tr-group-header">
+              <td colspan="4">Propinas Mensais</td>
+            </tr>
+
+            <tr class="tr-highlight">
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <circle cx="9" cy="9" r="2.5" stroke="#1F4E79" stroke-width="1.3" />
+                      <path d="M4 9h.01M14 9h.01" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Propina — Contabilidade e Gestão</div>
+                    <div class="td-item-desc">Acesso às aulas, avaliações contínuas e apoio pedagógico</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Mensal</span></td>
+              <td><span class="curso-pill gestao">Contabilidade e Gestão</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{propina}} Kz</span>
+                  <span class="valor-unit">por mês</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="tr-highlight">
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <circle cx="9" cy="9" r="2.5" stroke="#1F4E79" stroke-width="1.3" />
+                      <path d="M4 9h.01M14 9h.01" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Propina — Enfermagem e Análises Clínicas</div>
+                    <div class="td-item-desc">Inclui acesso aos laboratórios de saúde e simulação clínica</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Mensal</span></td>
+              <td><span class="curso-pill saude">Enfermagem / An. Clínicas</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{propina}}Kz</span>
+                  <span class="valor-unit">por mês</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="tr-highlight">
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <circle cx="9" cy="9" r="2.5" stroke="#1F4E79" stroke-width="1.3" />
+                      <path d="M4 9h.01M14 9h.01" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Propina — Informática</div>
+                    <div class="td-item-desc">Inclui acesso aos laboratórios de programação e redes</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Mensal</span></td>
+              <td><span class="curso-pill info">Informática</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{propina}} Kz</span>
+                  <span class="valor-unit">por mês</span>
+                </div>
+              </td>
+            </tr>
+
+            <!-- GRUPO: EXAMES -->
+            <tr class="tr-group-header">
+              <td colspan="4">Folhas de Provas</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="3" y="2" width="12" height="14" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <path d="M6 6h6M6 9h6M6 12h4" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Folha de Prova</div>
+                    <div class="td-item-desc">Folha de provas Anual</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Anual</span></td>
+              <td><span class="curso-pill todos">Todos os cursos</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">12.000,00 Kz</span>
+                  <span class="valor-unit">Todas as folhas do ano lectivo</span>
+                </div>
+              </td>
+              
+            </tr>
+
+            <tr>
+
+              <!-- GRUPO: MATERIAIS -->
+            <tr class="tr-group-header">
+              <td colspan="4">Materiais e Documentos</td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="3" y="2" width="9" height="14" rx="1" stroke="#1F4E79" stroke-width="1.4" />
+                      <path d="M12 5h3M12 9h3M12 13h2" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+                      <path d="M5 6h5M5 9h5M5 12h3" stroke="#1F4E79" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Manual Escolar</div>
+                    <div class="td-item-desc">Manual impresso por disciplina / ano lectivo</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Por disciplina</span></td>
+              <td><span class="curso-pill todos">Todos os cursos</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{manual}},00 Kz</span>
+                  <span class="valor-unit">por manual</span>
+                </div>
+              </td>
+            </tr>
+<tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="3" y="2" width="9" height="14" rx="1" stroke="#1F4E79" stroke-width="1.4" />
+                      <path d="M12 5h3M12 9h3M12 13h2" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+                      <path d="M5 6h5M5 9h5M5 12h3" stroke="#1F4E79" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Uniforme-Camisola</div>
+                    <div class="td-item-desc"></div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Uma únca aquisicão</span></td>
+              <td><span class="curso-pill todos">curso-Informática e Gestão </span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{manual}},00 Kz</span>
+                  <span class="valor-unit"></span>
+                </div>
+              </td>
+            </tr>
+<tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="3" y="2" width="9" height="14" rx="1" stroke="#1F4E79" stroke-width="1.4" />
+                      <path d="M12 5h3M12 9h3M12 13h2" stroke="#1F4E79" stroke-width="1.4" stroke-linecap="round" />
+                      <path d="M5 6h5M5 9h5M5 12h3" stroke="#1F4E79" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Uniforme-engermagem</div>
+                    <div class="td-item-desc">unifomre para o uso diário</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Uma única aquisicão</span></td>
+              <td><span class="curso-pill todos">cursos de saúde </span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{manual}},00 Kz</span>
+                  <span class="valor-unit"></span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <circle cx="6.5" cy="9" r="2" stroke="#1F4E79" stroke-width="1.3" />
+                      <path d="M10 7h5M10 10h4M10 13h2" stroke="#1F4E79" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Cartão Escolar — Emissão</div>
+                    <div class="td-item-desc">Cartão de identificação do estudante, emitido na matrícula</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Uma vez</span></td>
+              <td><span class="curso-pill todos">Todos os cursos</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{cartao}},00 Kz</span>
+                  <span class="valor-unit">emissão única</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="td-item">
+                  <div class="td-item-icon">
+                    <svg viewBox="0 0 18 18" fill="none">
+                      <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="#1F4E79" stroke-width="1.4" />
+                      <circle cx="6.5" cy="9" r="2" stroke="#1F4E79" stroke-width="1.3" />
+                      <path d="M10 7h5M10 10h4M10 13h2" stroke="#1F4E79" stroke-width="1.3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="td-item-name">Cartão Escolar — 2.ª Via</div>
+                    <div class="td-item-desc">Segunda via por extravio.</div>
+                  </div>
+                </div>
+              </td>
+              <td><span class="period-badge">Por pedido</span></td>
+              <td><span class="curso-pill todos">Todos os cursos</span></td>
+              <td class="td-valor">
+                <div class="valor-wrap">
+                  <span class="valor-num">{{cartao}},00 Kz</span>
+                  <span class="valor-unit">por emissão</span>
+                </div>
+
+              </td>
+            </tr>
+
+
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footnote reveal">
+        <svg viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="6.5" stroke="#6B7280" stroke-width="1.3" />
+          <path d="M8 7v4M8 5h.01" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+        <span>Os valores apresentados são indicativos para o ano lectivo 2025/2026. O custo total estimado varia
+          consoante o curso escolhido e o número de disciplinas em que o estudante tem. Para informação precisa e
+          actualizada, dirija-se à secretaria ou contacte-nos pelo telefone ou e-mail indicados no rodapé.</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FORMAS DE PAGAMENTO
+  ============================================================ -->
+  <section id="pagamento">
+    <div class="container">
+      <div class="pag-header reveal">
+        <span class="section-label">Como Pagar</span>
+        <h2 class="section-title">Formas de <span>Pagamento</span></h2>
+        <p>Oferecemos múltiplas formas de pagamento para sua comodidade. Todos os pagamentos devem ser comprovados junto
+          da secretaria.</p>
+      </div>
+
+      <div class="pag-grid">
+
+        <div class="pag-card reveal">
+          <div class="pag-icon">
+            <svg viewBox="0 0 26 26" fill="none">
+              <rect x="2" y="6" width="22" height="14" rx="2.5" stroke="#1F4E79" stroke-width="1.7" />
+              <path d="M2 11h22" stroke="#1F4E79" stroke-width="1.7" />
+              <rect x="5" y="14" width="4" height="2.5" rx=".5" fill="#1F4E79" />
+            </svg>
+          </div>
+          <h3>Pagamento na Secretaria</h3>
+          <p>Dirija-se à secretaria do instituto munido dos documentos necessários. Aceita-se pagamento em numerário e
+            referência bancária.</p>
+          <div class="pag-steps">
+            <div class="pag-step">
+              <span class="step-num">1</span>
+              Dirija-se à secretaria no horário de funcionamento
+            </div>
+            <div class="pag-step">
+              <span class="step-num">2</span>
+              Solicite a guia de pagamento referente ao serviço pretendido
+            </div>
+            <div class="pag-step">
+              <span class="step-num">3</span>
+              Efectue o pagamento e guarde o comprovativo
+            </div>
+          </div>
+        </div>
+        <div class="pag-card reveal">
+          <div class="pag-icon">
+            <svg viewBox="0 0 26 26" fill="none">
+              <rect x="2" y="6" width="22" height="14" rx="2.5" stroke="#1F4E79" stroke-width="1.7" />
+              <path d="M2 11h22" stroke="#1F4E79" stroke-width="1.7" />
+              <rect x="5" y="14" width="4" height="2.5" rx=".5" fill="#1F4E79" />
+            </svg>
+          </div>
+          <h3>Pagamento via express, só na secretarioa.</h3>
+          <p>Dirija-se à secretaria do instituto munido dos documentos necessários. Aceita-se pagamento em numerário e
+            referência bancária.</p>
+          <div class="pag-steps">
+            <div class="pag-step">
+              <span class="step-num">1</span>
+              Dirija-se à secretaria no horário de funcionamento
+            </div>
+            <div class="pag-step">
+              <span class="step-num">2</span>
+              Solicite a guia de pagamento referente ao serviço pretendido
+            </div>
+            <div class="pag-step">
+              <span class="step-num">3</span>
+              Efectue o pagamento e guarde o comprovativo
+            </div>
+          </div>
+        </div>
+
+        <div class="pag-card reveal" style="transition-delay:.1s">
+          <div class="pag-icon">
+            <svg viewBox="0 0 26 26" fill="none">
+              <rect x="4" y="3" width="18" height="20" rx="3" stroke="#1F4E79" stroke-width="1.7" />
+              <path d="M9 9h8M9 13h8M9 17h5" stroke="#1F4E79" stroke-width="1.7" stroke-linecap="round" />
+            </svg>
+          </div>
+          <h3><del> Transferência Bancária </del></h3>
+          <p>De momento o pagamento por transferência esta suspenso </p>
+          <div class="pag-steps">
+            <div class="pag-step">
+              <span class="step-num">1</span>
+              Assim que estiver desponivel será informado
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+  </section>
+
+  <!-- ============================================================
+       FAQ
+  ============================================================ -->
+  <section id="faq">
+    <div class="container">
+      <div class="faq-header reveal">
+        <span class="section-label">Perguntas Frequentes</span>
+        <h2 class="section-title">Dúvidas sobre <span>pagamentos</span></h2>
+        <p>Respostas às questões mais comuns dos nossos estudantes e encarregados de educação.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+
+        <div class="faq-item">
+          <div class="faq-trigger">
+            Qual é o prazo para pagamento da propina mensal?
+            <span class="faq-chevron">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M3 5l4 4 4-4" stroke="#1F4E79" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-body">
+            <p>A propina deve ser paga até ao dia 07 de cada mês. Após essa data, poderá ser aplicada uma multa.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-trigger">
+            A propina inclui os manuais escolares?
+            <span class="faq-chevron">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M3 5l4 4 4-4" stroke="#1F4E79" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-body">
+            <p>Não. Os manuais escolares são pagos separadamente, por disciplina, no início do ano lectivo. O valor por
+              manual é de 6.000 Kz.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-trigger">
+            Existe algum desconto para pagamento semestral ou anual?
+            <span class="faq-chevron">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M3 5l4 4 4-4" stroke="#1F4E79" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-body">
+            <p>Sim. O pagamento semestral antecipado (6 meses) beneficia de um desconto de 8% sobre o total. O pagamento
+              anual antecipado beneficia de um desconto de 15%. Estes descontos são aplicados mediante pedido na
+              secretaria até ao final de Outubro.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-trigger">
+            O que acontece se não pagar a propina a tempo?
+            <span class="faq-chevron">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M3 5l4 4 4-4" stroke="#1F4E79" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-body">
+            <p>O estudante com propinas em atraso pode ser impedido de realizar provas e de aceder a documentos
+              académicos (declarações, certificados).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-trigger">
+            A folha de prova é paga mesmo que eu reprove?
+            <span class="faq-chevron">
+              <svg viewBox="0 0 14 14" fill="none">
+                <path d="M3 5l4 4 4-4" stroke="#1F4E79" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+          </div>
+          <div class="faq-body">
+            <p>Sim. A folha de prova é paga uma vez por ano, ou seja, o valor de 12.000,00 é anual. </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-content reveal">
+
+        <h2 class="section-title">Tem dúvidas sobre<br />os <span>pagamentos</span>?</h2>
+        <p class="cta-sub">A nossa secretaria está disponível para esclarecer qualquer questão. Contacte-nos ou
+          visite-nos pessoalmente.</p>
+        <div class="cta-actions">
+          <a href="index.html#cta" class="btn-primary">Inscrever-se Agora</a>
+          <a href="index.html#footer" class="btn-ghost">Contactar a Secretaria</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+            <img src="public/img/logo.jfif" alt="logo" loading="lazy"
+              style="max-width: 40px; max-height: 40px; border-radius: 50%;">
+            <div class="logo-text">
+              <strong>Santa ana & noesa</strong>
+              <small>Santa Ana e Noesa</small>
+            </div>
+          </a>
+          <p>Formando profissionais comprometidos com o desenvolvimento de Angola e do continente africano através da
+            educação técnica de qualidade.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" title="Facebook">f</a>
+            <a href="#" class="social-btn" title="Instagram">ig</a>
+            <a href="#" class="social-btn" title="YouTube">yt</a>
+            <a href="#" class="social-btn" title="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Links Rapidos -->
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre o Instituto</a></li>
+            <li><a href="#cursos">Cursos Oferecidos</a></li>
+            <li><a href="#precos">Tabela de Preços</a></li>
+            <li><a href="laboratorios.html">Laboratórios</a></li>
+            <li><a href="#cta">Candidaturas</a></li>
+          </ul>
+        </div>
+
+        <!-- Cursos -->
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <ul class="footer-links">
+            <li><a href="#cursos">Contabilidade e Gestão</a></li>
+            <li><a href="#cursos">Enfermagem</a></li>
+            <li><a href="#cursos">Análises Clínicas</a></li>
+            <li><a href="#cursos">Informática</a></li>
+          </ul>
+        </div>
+
+        <!-- Contactos -->
+        <div class="footer-col">
+          <h4>Contactos</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none">
+                <path
+                  d="M9 1C6.24 1 4 3.24 4 6c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 9 4a1.5 1.5 0 0 1 0 3.5z"
+                  fill="rgba(255,255,255,0.5)" />
+              </svg>
+            </div>
+            <span>Luanda, Angola — Br. Vila Alice - Nelito Soares, rua da liberde, nª 135/137 </span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none">
+                <path
+                  d="M3.5 2A1.5 1.5 0 0 0 2 3.5v1C2 11.404 6.596 16 13.5 16h1a1.5 1.5 0 0 0 1.5-1.5v-1.5a1 1 0 0 0-.6-.92l-2.5-1a1 1 0 0 0-1.1.25l-.88.88A7.02 7.02 0 0 1 7.3 8.1l.88-.88a1 1 0 0 0 .25-1.1l-1-2.5A1 1 0 0 0 6.5 3L5 3c-.55 0-1.5.448-1.5 1z"
+                  fill="rgba(255,255,255,0.5)" />
+              </svg>
+            </div>
+            <span>+244 946 725 869</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none">
+                <rect x="2" y="4" width="14" height="10" rx="1.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" />
+                <path d="M2 6l7 5 7-5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span>info@impsan.ao</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" />
+                <path d="M9 5v4l2.5 2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span>Segunda a Sexta: 07h00 – 18h00</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2027 Instituto Médio Politécnico Santa Ana e Noesa. Todos os direitos reservados.</p>
+        <p>Desenvolvido pelo <span class="gold">Carlos Quitumba</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+
+    // Scroll reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Category cards highlight on click
+    document.querySelectorAll('.cat-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

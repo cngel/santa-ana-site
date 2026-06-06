@@ -1,0 +1,732 @@
+ <!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laboratórios — Instituto Médio Politécnico Santa Ana e Noesa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+ <link rel="stylesheet" href="public/css/laboratorios.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header id="header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="logo">
+          <img src="public/img/logo.jfif" alt="logo" style="max-width: 50px; max-height: 50px; border-radius: 50%;" >
+          <div class="logo-text">
+            <strong>Colégio Santa ana & noesa</strong>
+            <small>Inst. Médio Politécnico Santa Ana e Noesa</small>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="index.html#cursos">Cursos</a></li>
+            <li><a href="/preco">Preços</a></li>
+            <li><a href="laboratorios.html" class="active">Instalações</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+          </ul>
+        </nav>
+
+        <a href="index.html#cta" class="btn-primary header-cta">Inscrever-se</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="index.html#cursos">Cursos</a></li>
+        <li><a href="/preco">Preços</a></li>
+        <li><a href="laboratorios.html">Instalações</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="index.html#cta" class="btn-primary">Inscrever-se</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PAGE HERO
+  ============================================================ -->
+  <section id="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-geo"></div>
+    <div class="page-hero-line"></div>
+
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="index.html">Início</a>
+          <span class="sep"></span>
+          <span class="current">Laboratórios</span>
+        </nav>
+
+        <h1 class="page-hero-title">
+          Os Nossos<br/><span>Laboratórios</span>
+        </h1>
+        <p class="page-hero-sub">
+          Infraestruturas modernas, equipamentos de última geração e ambientes de aprendizagem
+          concebidos para preparar os nossos estudantes para o mercado de trabalho real.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTRO STRIP
+  ============================================================ -->
+  <div id="intro-strip">
+    <div class="container">
+      <div class="intro-strip-inner">
+
+        <div class="strip-item reveal">
+          <div class="strip-icon">
+            <svg viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="3" stroke="#1F4E79" stroke-width="1.6"/><path d="M7 11h8M11 7v8" stroke="#1F4E79" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="strip-label">Laboratórios</div>
+            <div class="strip-value">6 Especializados</div>
+          </div>
+        </div>
+
+        <div class="strip-item reveal" style="transition-delay:.08s">
+          <div class="strip-icon">
+            <svg viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#1F4E79" stroke-width="1.6"/><path d="M11 7v4l2.5 2.5" stroke="#1F4E79" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="strip-label">Funcionamento</div>
+            <div class="strip-value">Seg – Sex, 07h – 18h</div>
+          </div>
+        </div>
+
+        <div class="strip-item reveal" style="transition-delay:.16s">
+          <div class="strip-icon">
+            <svg viewBox="0 0 22 22" fill="none"><path d="M11 3L3 7v6c0 4.4 3.4 8.4 8 9.5 4.6-1.1 8-5.1 8-9.5V7L11 3z" stroke="#1F4E79" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 11l2.5 2.5L14.5 9" stroke="#1F4E79" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="strip-label">Equipamento</div>
+            <div class="strip-value">Renovado em 2023</div>
+          </div>
+        </div>
+
+        <div class="strip-item reveal" style="transition-delay:.24s">
+          <div class="strip-icon">
+            <svg viewBox="0 0 22 22" fill="none"><circle cx="9" cy="9" r="6" stroke="#1F4E79" stroke-width="1.6"/><path d="M13.5 13.5L19 19" stroke="#1F4E79" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="strip-label">Supervisão</div>
+            <div class="strip-value">Técnico Permanente</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       INTRO SECTION
+  ============================================================ -->
+  <section id="lab-intro">
+    <div class="container">
+      <div class="lab-intro-grid">
+
+        <div class="lab-intro-text reveal">
+          <span class="section-label">Sobre as Instalações</span>
+          <h2 class="section-title">Aprender fazendo,<br/>com <span>tecnologia real</span></h2>
+          <p>
+            No Instituto Médio Politécnico Santa Ana e Noesa, acreditamos que a formação técnica
+            de qualidade exige contacto direto com ferramentas, equipamentos e ambientes
+            idênticos aos encontrados no mercado de trabalho.
+          </p>
+          <p>
+            Os nossos laboratórios foram concebidos com essa premissa: proporcionar ao estudante
+            uma experiência prática supervisionada, segura e alinhada com os padrões
+            profissionais de cada área de formação.
+          </p>
+
+          <div class="lab-intro-features">
+            <div class="lab-feature-item">
+              <span class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Equipamento certificado
+            </div>
+            <div class="lab-feature-item">
+              <span class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Acesso livre para estudantes
+            </div>
+            <div class="lab-feature-item">
+              <span class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Normas de biossegurança
+            </div>
+            <div class="lab-feature-item">
+              <span class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Supervisão especializada
+            </div>
+            <div class="lab-feature-item">
+              <span class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Higiene e manutenção diária
+            </div>
+            <div class="lab-feature-item">
+              <span class="feat-check"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Fichas de práticas laboratoriais
+            </div>
+          </div>
+        </div>
+
+        <div class="lab-intro-visual reveal" style="transition-delay:.15s">
+          <div class="lab-badge-float">
+            <strong>6</strong>
+            <div class="gold-line"></div>
+            <span>Laboratórios</span>
+          </div>
+
+          <div class="lab-intro-img-main">
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=80" alt="Laboratório moderno" />
+          </div>
+
+          <div class="lab-intro-img-thumb">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&q=80" alt="Alunos no laboratório" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LAB CARDS — VISAO GERAL
+  ============================================================ -->
+  <section id="laboratorios">
+    <div class="container">
+
+      <div class="labs-header reveal">
+        <span class="section-label">Todos os Laboratórios</span>
+        <h2 class="section-title">Conheça os Nossos<br/><span>Espaços Práticos</span></h2>
+        <p>Seis laboratórios especializados, cada um pensado para a área de formação correspondente, com equipamento atualizado e técnicos permanentes.</p>
+      </div>
+
+      <div class="filter-tabs reveal">
+        <button class="filter-tab active" data-filter="all">Todos</button>
+        <button class="filter-tab" data-filter="saude">Saúde</button>
+        <button class="filter-tab" data-filter="informatica">Informática</button>
+        <button class="filter-tab" data-filter="gestao">Gestão</button>
+      </div>
+
+      <div class="labs-grid">
+
+        <!-- LAB 1 — DESTAQUE: Análises Clínicas -->
+        <div class="lab-card lab-card-featured reveal" data-area="saude">
+          <div class="lab-card-img">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80" alt="Laboratório de Análises Clínicas" loading="lazy"/>
+            <div class="lab-card-overlay"></div>
+            <span class="lab-area-tag">Saúde</span>
+            <div class="lab-status"><span class="dot"></span> Operacional</div>
+          </div>
+          <div class="lab-card-body">
+            <h3>Laboratório de Análises Clínicas</h3>
+            <p>
+              Equipado com microscópios binoculares, centrífugas, analisadores hematológicos e todos os reagentes necessários para a prática das principais técnicas de diagnóstico laboratorial. Os estudantes de Enfermagem e Análises Clínicas realizam aqui as suas aulas práticas semanais, desde a colheita de amostras até à leitura e interpretação de resultados, sob orientação de docentes especializados.
+            </p>
+            <div class="lab-specs">
+              <div class="spec-item">
+                <span class="spec-label">Capacidade</span>
+                <span class="spec-value">30 Estudantes</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Postos de Trabalho</span>
+                <span class="spec-value">15 Bancadas</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Renovação</span>
+                <span class="spec-value">2023</span>
+              </div>
+            </div>
+            <div class="lab-equip">
+              <span class="equip-tag">Microscopia</span>
+              <span class="equip-tag">Hematologia</span>
+              <span class="equip-tag">Bioquímica</span>
+              <span class="equip-tag">Microbiologia</span>
+              <span class="equip-tag">Urianálise</span>
+              <span class="equip-tag">Reagentes certificados</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB 2 — Enfermagem -->
+        <div class="lab-card reveal" data-area="saude" style="transition-delay:.1s">
+          <div class="lab-card-img">
+            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&q=80" alt="Laboratório de Enfermagem" loading="lazy"/>
+            <div class="lab-card-overlay"></div>
+            <span class="lab-area-tag">Saúde</span>
+            <div class="lab-status"><span class="dot"></span> Operacional</div>
+          </div>
+          <div class="lab-card-body">
+            <h3>Laboratório de Simulação Clínica</h3>
+            <p>
+              Ambiente simulado de uma unidade hospitalar, com camas clínicas, manequins de treino, equipamento de monitorização e material de penso. Permite treinar procedimentos de enfermagem em ambiente controlado antes do estágio hospitalar.
+            </p>
+            <div class="lab-specs">
+              <div class="spec-item">
+                <span class="spec-label">Capacidade</span>
+                <span class="spec-value">24 Estudantes</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Camas</span>
+                <span class="spec-value">6 Unidades</span>
+              </div>
+            </div>
+            <div class="lab-equip">
+              <span class="equip-tag">Manequins de treino</span>
+              <span class="equip-tag">Monitor cardíaco</span>
+              <span class="equip-tag">Material de penso</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB 3 — Informatica Principal -->
+        <div class="lab-card reveal" data-area="informatica" style="transition-delay:.15s">
+          <div class="lab-card-img">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80" alt="Laboratório de Informática" loading="lazy"/>
+            <div class="lab-card-overlay"></div>
+            <span class="lab-area-tag">Informática</span>
+            <div class="lab-status"><span class="dot"></span> Operacional</div>
+          </div>
+          <div class="lab-card-body">
+            <h3>Laboratório de Programação</h3>
+            <p>
+              Estações de trabalho com processadores de última geração, ecrãs de alta resolução e acesso à internet de alta velocidade. Ambiente configurado com as principais linguagens de programação, IDEs e ferramentas de desenvolvimento utilizadas no mercado angolano.
+            </p>
+            <div class="lab-specs">
+              <div class="spec-item">
+                <span class="spec-label">Computadores</span>
+                <span class="spec-value">40 Postos</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Internet</span>
+                <span class="spec-value">Fibra 1 Gbps</span>
+              </div>
+            </div>
+            <div class="lab-equip">
+              <span class="equip-tag">Visual Studio Code</span>
+              <span class="equip-tag">Python / Java</span>
+              <span class="equip-tag">Redes locais</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB 4 — Redes e Sistemas -->
+        <div class="lab-card reveal" data-area="informatica" style="transition-delay:.2s">
+          <div class="lab-card-img">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Laboratório de Redes" loading="lazy"/>
+            <div class="lab-card-overlay"></div>
+            <span class="lab-area-tag">Informática</span>
+            <div class="lab-status"><span class="dot"></span> Operacional</div>
+          </div>
+          <div class="lab-card-body">
+            <h3>Laboratório de Redes e Infraestrutura</h3>
+            <p>
+              Espaço dedicado à configuração de redes informáticas, com switches, routers, servidores e painéis de cablagem estruturada. Os estudantes aprendem a instalar, configurar e gerir infraestruturas de rede em ambiente profissional.
+            </p>
+            <div class="lab-specs">
+              <div class="spec-item">
+                <span class="spec-label">Servidores</span>
+                <span class="spec-value">4 Rack Units</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Postos</span>
+                <span class="spec-value">20 Estações</span>
+              </div>
+            </div>
+            <div class="lab-equip">
+              <span class="equip-tag">Cisco switches</span>
+              <span class="equip-tag">Servidores Linux</span>
+              <span class="equip-tag">Cablagem Cat6</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB 5 — DESTAQUE: Contabilidade -->
+        <div class="lab-card lab-card-featured reveal" data-area="gestao" style="transition-delay:.1s">
+          <div class="lab-card-img">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=900&q=80" alt="Laboratório de Gestão" loading="lazy"/>
+            <div class="lab-card-overlay"></div>
+            <span class="lab-area-tag">Gestão</span>
+            <div class="lab-status"><span class="dot"></span> Operacional</div>
+          </div>
+          <div class="lab-card-body">
+            <h3>Laboratório de Contabilidade e Gestão Empresarial</h3>
+            <p>
+              Sala de trabalho empresarial simulada, com postos individuais equipados com computadores, software de contabilidade certificado e acesso a bases de dados económicas. Os estudantes praticam lançamentos contabilísticos, elaboração de demonstrações financeiras e gestão de recursos humanos em contexto real de empresa angolana.
+            </p>
+            <div class="lab-specs">
+              <div class="spec-item">
+                <span class="spec-label">Postos</span>
+                <span class="spec-value">35 Individuais</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Software</span>
+                <span class="spec-value">Primavera / PHC</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Impressoras</span>
+                <span class="spec-value">4 Unidades</span>
+              </div>
+            </div>
+            <div class="lab-equip">
+              <span class="equip-tag">Primavera ERP</span>
+              <span class="equip-tag">Microsoft Office</span>
+              <span class="equip-tag">Excel avançado</span>
+              <span class="equip-tag">Power BI</span>
+              <span class="equip-tag">Gestao fiscal AGT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAB 6 — Biologia / Farmacologia -->
+        <div class="lab-card reveal" data-area="saude" style="transition-delay:.25s">
+          <div class="lab-card-img">
+            <img src="https://images.unsplash.com/photo-1666214280250-1e74bff4167b?w=600&q=80" alt="Laboratório de Biologia" loading="lazy"/>
+            <div class="lab-card-overlay"></div>
+            <span class="lab-area-tag">Saúde</span>
+            <div class="lab-status"><span class="dot"></span> Operacional</div>
+          </div>
+          <div class="lab-card-body">
+            <h3>Laboratório de Biologia e Farmacologia</h3>
+            <p>
+              Espaço dedicado ao estudo das ciências biológicas aplicadas à saúde, com modelos anatómicos, placas de Petri, estufas bacteriológicas e armários de reagentes controlados. Suporta as disciplinas de anatomia, fisiologia e farmacologia dos cursos de saúde.
+            </p>
+            <div class="lab-specs">
+              <div class="spec-item">
+                <span class="spec-label">Capacidade</span>
+                <span class="spec-value">28 Estudantes</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Modelos</span>
+                <span class="spec-value">12 Anatómicos</span>
+              </div>
+            </div>
+            <div class="lab-equip">
+              <span class="equip-tag">Modelos anatómicos</span>
+              <span class="equip-tag">Estufa bacteriológica</span>
+              <span class="equip-tag">Reagentes controlados</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DETALHE — LAB EM FOCO (alternado)
+  ============================================================ -->
+  <section id="detalhe">
+    <div class="container">
+
+      <div class="detalhe-header reveal">
+        <span class="section-label">Em Destaque</span>
+        <h2 class="section-title">Uma visão mais<br/><span>aprofundada</span></h2>
+        <p>Conheça em detalhe o que cada laboratório oferece para a formação dos nossos estudantes.</p>
+      </div>
+
+      <!-- Item 1 — normal -->
+      <div class="detalhe-item reveal">
+        <div class="detalhe-img">
+          <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=700&q=80" alt="Análises Clínicas" loading="lazy"/>
+        </div>
+        <div class="detalhe-text">
+          <span class="section-label">Análises Clínicas</span>
+          <h3 class="section-title">Diagnóstico com<br/><span>precisão científica</span></h3>
+          <p>O laboratório de Análises Clínicas replica fielmente o ambiente de um laboratório hospitalar angolano. Os estudantes aprendem a realizar análises hematológicas, bioquímicas e microbiológicas seguindo os protocolos exigidos pelo Ministério da Saúde de Angola.</p>
+          <p>Cada posto de trabalho dispõe do equipamento e dos reagentes necessários para a realização autónoma dos procedimentos, sempre sob supervisão de um técnico de laboratório certificado.</p>
+          <div class="detalhe-list">
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M8 2v6l3 3" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="8" r="6" stroke="#1F4E79" stroke-width="1.5"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Horário de funcionamento</strong>
+                <span>Segunda a Sexta, 07h00 – 17h30</span>
+              </div>
+            </div>
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="12" height="9" rx="1.5" stroke="#1F4E79" stroke-width="1.5"/><path d="M5 4V3a3 3 0 0 1 6 0v1" stroke="#1F4E79" stroke-width="1.5"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Acesso</strong>
+                <span>Estudantes de Enfermagem e Análises Clínicas</span>
+              </div>
+            </div>
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="6" r="3" stroke="#1F4E79" stroke-width="1.5"/><path d="M3 14c0-3 2.2-5 5-5s5 2 5 5" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Supervisor responsável</strong>
+                <span>Técnico de Laboratório permanente</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 — invertido -->
+      <div class="detalhe-item reverse reveal">
+        <div class="detalhe-img">
+          <img src="./public/img/BC6F6097-066B-4B68-8AFD-1DCFC66289FB.jpeg" alt="Laboratório de Informática" loading="lazy"/>
+        </div>
+        <div class="detalhe-text">
+          <span class="section-label">Informática</span>
+          <h3 class="section-title">Tecnologia do<br/><span>presente e do futuro</span></h3>
+          <p>Os laboratórios de Informática do IMPSAN estão configurados com as ferramentas mais utilizadas no mercado tecnológico angolano. Desde a programação orientada a objetos até à gestão de infraestruturas de rede, os estudantes dominam competências imediatamente aplicáveis.</p>
+          <p>A ligação por fibra ótica de 1 Gbps garante acesso rápido a plataformas de aprendizagem online, repositórios de código e serviços em nuvem utilizados nas práticas profissionais.</p>
+          <div class="detalhe-list">
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="9" rx="1.5" stroke="#1F4E79" stroke-width="1.5"/><path d="M5 13h6" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>40 estações individuais</strong>
+                <span>Intel Core i7, 16GB RAM, SSD 512GB</span>
+              </div>
+            </div>
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Internet de alta velocidade</strong>
+                <span>Fibra ótica dedicada de 1 Gbps</span>
+              </div>
+            </div>
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M13 5H3a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zM5 5V3.5A2.5 2.5 0 0 1 7.5 1h1A2.5 2.5 0 0 1 11 3.5V5" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Software licenciado</strong>
+                <span>Microsoft, JetBrains, Cisco Packet Tracer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 — normal -->
+      <div class="detalhe-item reveal">
+        <div class="detalhe-img">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&q=80" alt="Contabilidade" loading="lazy"/>
+        </div>
+        <div class="detalhe-text">
+          <span class="section-label">Gestão Empresarial</span>
+          <h3 class="section-title">Simulação real<br/><span>de empresa angolana</span></h3>
+          <p>O laboratório de Contabilidade e Gestão vai além das aulas tradicionais. Cada estudante gere uma empresa simulada ao longo do ano lectivo, processando salários, emitindo faturas, submetendo declarações à AGT e elaborando o relatório de gestão anual.</p>
+          <p>Esta metodologia, única em Angola no ensino médio técnico, garante que os nossos diplomados chegam ao mercado de trabalho com experiência prática documentada em software utilizado pelas empresas angolanas.</p>
+          <div class="detalhe-list">
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4zM5 4V2.5A1.5 1.5 0 0 1 6.5 1h3A1.5 1.5 0 0 1 11 2.5V4" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Empresa simulada anual</strong>
+                <span>Cada estudante gere o seu próprio dossier empresarial</span>
+              </div>
+            </div>
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#1F4E79" stroke-width="1.5"/><path d="M5 8h6M5 5h3M5 11h4" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>Primavera ERP e PHC</strong>
+                <span>Software profissional utilizado em Angola</span>
+              </div>
+            </div>
+            <div class="detalhe-list-item">
+              <div class="dl-icon">
+                <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#1F4E79" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="#1F4E79" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="dl-text">
+                <strong>35 postos individuais</strong>
+                <span>Com impressora de faturação dedicada</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALERIA RAPIDA
+  ============================================================ -->
+  <section id="lab-galeria">
+    <div class="container">
+      <div class="lab-gal-header reveal">
+        <span class="section-label">Galeria</span>
+        <h2 class="section-title">O Ambiente que<br/><span>nos define</span></h2>
+        <p>Imagens reais dos nossos espaços laboratoriais e do dia a dia dos estudantes em contexto prático.</p>
+      </div>
+
+      <div class="lab-gal-grid reveal">
+        <div class="lab-gal-item">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80" alt="Laboratório de Análises" loading="lazy"/>
+          <div class="lab-gal-overlay"><span>Lab. Análises Clínicas</span></div>
+        </div>
+        <div class="lab-gal-item">
+          <img src="./public/img/71A28090-5EEA-4674-AFA3-392390765658.jpeg" alt="Lab Informática" loading="lazy"/>
+          <div class="lab-gal-overlay"><span>Lab. Programação</span></div>
+        </div>
+        <div class="lab-gal-item">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Lab Redes" loading="lazy"/>
+          <div class="lab-gal-overlay"><span>Lab. Redes e Infraestrutura</span></div>
+        </div>
+        <div class="lab-gal-item">
+          <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&q=80" alt="Lab Simulação" loading="lazy"/>
+          <div class="lab-gal-overlay"><span>Lab. Simulação Clínica</span></div>
+        </div>
+        <div class="lab-gal-item">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=700&q=80" alt="Lab Contabilidade" loading="lazy"/>
+          <div class="lab-gal-overlay"><span>Lab. Contabilidade e Gestão</span></div>
+        </div>
+        <div class="lab-gal-item">
+          <img src="https://images.unsplash.com/photo-1666214280250-1e74bff4167b?w=600&q=80" alt="Lab Biologia" loading="lazy"/>
+          <div class="lab-gal-overlay"><span>Lab. Biologia e Farmacologia</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA FINAL
+  ============================================================ -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-content reveal">
+        <span class="section-label">Candidaturas 2025 / 2026</span>
+        <h2 class="section-title">Venha aprender<br/>num <span>ambiente de excelência</span></h2>
+        <p class="cta-sub">As vagas são limitadas. Garanta o seu lugar e tenha acesso a todos estes laboratórios a partir do primeiro ano.</p>
+        <div class="cta-actions">
+          <a href="index.html#cta" class="btn-primary">Candidatar-se Agora</a>
+          <a href="index.html#footer" class="btn-ghost">Falar Connosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+   <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+             <img src="public/img/logo.jfif" alt="logo" loading="lazy"
+             style="max-width: 40px; max-height: 40px; border-radius: 50%;">
+            <div class="logo-text">
+              <strong>Santa ana & noesa</strong>
+              <small>Santa Ana e Noesa</small>
+            </div>
+          </a>
+          <p>Formando profissionais comprometidos com o desenvolvimento de Angola e do continente africano através da educação técnica de qualidade.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" title="Facebook">f</a>
+            <a href="#" class="social-btn" title="Instagram">ig</a>
+            <a href="#" class="social-btn" title="YouTube">yt</a>
+            <a href="#" class="social-btn" title="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Links Rapidos -->
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre o Instituto</a></li>
+            <li><a href="#cursos">Cursos Oferecidos</a></li>
+            <li><a href="#precos">Tabela de Preços</a></li>
+            <li><a href="laboratorios.html">Laboratórios</a></li>
+            <li><a href="#cta">Candidaturas</a></li>
+          </ul>
+        </div>
+
+        <!-- Cursos -->
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <ul class="footer-links">
+            <li><a href="#cursos">Contabilidade e Gestão</a></li>
+            <li><a href="#cursos">Enfermagem</a></li>
+            <li><a href="#cursos">Análises Clínicas</a></li>
+            <li><a href="#cursos">Informática</a></li>
+          </ul>
+        </div>
+
+        <!-- Contactos -->
+        <div class="footer-col">
+          <h4>Contactos</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><path d="M9 1C6.24 1 4 3.24 4 6c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 9 4a1.5 1.5 0 0 1 0 3.5z" fill="rgba(255,255,255,0.5)"/></svg>
+            </div>
+            <span>Luanda, Angola — Br. Vila Alice - Nelito Soares, rua da liberde, nª 135/137 </span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v1C2 11.404 6.596 16 13.5 16h1a1.5 1.5 0 0 0 1.5-1.5v-1.5a1 1 0 0 0-.6-.92l-2.5-1a1 1 0 0 0-1.1.25l-.88.88A7.02 7.02 0 0 1 7.3 8.1l.88-.88a1 1 0 0 0 .25-1.1l-1-2.5A1 1 0 0 0 6.5 3L5 3c-.55 0-1.5.448-1.5 1z" fill="rgba(255,255,255,0.5)"/></svg>
+            </div>
+            <span>+244 946 725 869</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M2 6l7 5 7-5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <span>info@impsan.ao</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M9 5v4l2.5 2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <span>Segunda a Sexta: 07h00 – 18h00</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2027 Instituto Médio Politécnico Santa Ana e Noesa. Todos os direitos reservados.</p>
+        <p>Desenvolvido pelo <span class="gold">Carlos Quitumba</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">
+      <svg viewBox="0 0 16 16" fill="none" width="16" height="16">
+        <path d="M3 3l10 10M13 3L3 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt=""/>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+ <script src="public/js/labortorios.js"></script>
+
+</body>
+</html>

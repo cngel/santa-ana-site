@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nós — Instituto Médio Politécnico Santa Ana e Noesa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+    ============================================================ */
+    :root {
+      --primary:      #1F4E79;
+      --primary-dark: #123A5D;
+      --secondary:    #C7A56B;
+      --light:        #F8FAFC;
+      --white:        #FFFFFF;
+      --text:         #1F2937;
+      --gray:         #6B7280;
+      --gray-light:   #E5EAF0;
+      --border:       #D1D9E6;
+
+      --shadow-sm: 0 2px 12px rgba(31,78,121,.10);
+      --shadow-md: 0 8px 32px rgba(31,78,121,.16);
+      --shadow-lg: 0 20px 60px rgba(31,78,121,.22);
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --transition: .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+    img { display: block; width: 100%; object-fit: cover; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
+
+    .container {
+      width: min(1200px, 92vw);
+      margin-inline: auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(31,78,121,.08);
+      padding: .35em 1.1em; border-radius: 99px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--primary-dark);
+      line-height: 1.15;
+    }
+    .section-title span { color: var(--secondary); }
+
+    /* ============================================================
+       HEADER
+    ============================================================ */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+      padding: 1.2rem 0;
+    }
+    #header.scrolled {
+      background: rgba(18,58,93,.97);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 4px 32px rgba(18,58,93,.45);
+      padding: .7rem 0;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .logo { display: flex; align-items: center; gap: .85rem; flex-shrink: 0; }
+    .logo-mark { width: 46px; height: 46px; flex-shrink: 0; }
+    .logo-text { color: var(--white); }
+    .logo-text strong { display: block; font-size: .95rem; font-weight: 800; letter-spacing: .03em; line-height: 1.1; }
+    .logo-text small  { font-size: .6rem; font-weight: 400; opacity: .65; letter-spacing: .04em; }
+
+    nav { flex: 1; display: flex; justify-content: center; }
+    .nav-links { display: flex; gap: .2rem; }
+    .nav-links a {
+      color: rgba(255,255,255,.78); font-size: .82rem; font-weight: 500;
+      padding: .5rem .9rem; border-radius: var(--radius-sm);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,.1); }
+    .nav-links a.active { color: var(--secondary); background: rgba(255,255,255,.08); }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: linear-gradient(135deg, var(--secondary), #b8903a);
+      color: var(--white); font-size: .82rem; font-weight: 700;
+      padding: .65rem 1.4rem; border-radius: 99px; border: none; cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+      box-shadow: 0 4px 20px rgba(199,165,107,.45);
+      white-space: nowrap; letter-spacing: .02em;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(199,165,107,.55); filter: brightness(1.08); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: transparent; color: var(--white); font-size: .9rem; font-weight: 600;
+      padding: .75rem 1.7rem; border-radius: 99px; border: 2px solid rgba(255,255,255,.45);
+      cursor: pointer; transition: all var(--transition);
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: .5rem; border: none; background: none; flex-shrink: 0;
+    }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all var(--transition); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; flex-direction: column; gap: .2rem;
+      padding: 1.2rem 0 1.5rem;
+      border-top: 1px solid rgba(255,255,255,.12); margin-top: .8rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,.85); font-size: .9rem; font-weight: 500; padding: .75rem 1rem; border-radius: var(--radius-sm); transition: background var(--transition); }
+    .mobile-menu a:hover { background: rgba(255,255,255,.1); }
+    .mobile-menu .btn-primary { margin-top: .5rem; justify-content: center; }
+
+    /* ============================================================
+       PAGE HERO
+    ============================================================ */
+    #page-hero {
+      position: relative;
+      height: 65vh; min-height: 440px;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+      background: var(--primary-dark);
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80') center/cover no-repeat;
+      transform: scale(1.06);
+      animation: slowZoom 22s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom {
+      from { transform: scale(1.06); }
+      to   { transform: scale(1.12); }
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(18,58,93,.97) 0%, rgba(18,58,93,.72) 45%, rgba(18,58,93,.45) 100%);
+    }
+    .page-hero-line {
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    }
+    .page-hero-geo {
+      position: absolute; top: -30%; right: -8%;
+      width: 50vw; height: 50vw;
+      border: 1px solid rgba(199,165,107,.14); border-radius: 50%; pointer-events: none;
+    }
+    .page-hero-geo::after {
+      content: ''; position: absolute; inset: 12%;
+      border: 1px solid rgba(199,165,107,.07); border-radius: 50%;
+    }
+    .page-hero-content { position: relative; z-index: 2; padding-bottom: 4rem; padding-top: 9rem; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .74rem; color: rgba(255,255,255,.55); margin-bottom: 1.2rem;
+      animation: fadeUp .6s both;
+    }
+    .breadcrumb a { transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--secondary); }
+    .breadcrumb .sep { width: 4px; height: 4px; background: rgba(199,165,107,.5); border-radius: 50%; }
+    .breadcrumb .current { color: var(--secondary); font-weight: 500; }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900; color: var(--white); line-height: 1.08;
+      margin-bottom: 1rem;
+      animation: fadeUp .8s .1s both;
+    }
+    .page-hero-title span { color: var(--secondary); }
+
+    .page-hero-sub {
+      color: rgba(255,255,255,.7);
+      font-size: clamp(.88rem, 2vw, 1rem); max-width: 560px;
+      animation: fadeUp .8s .22s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       FAIXA DE HOMENAGEM
+    ============================================================ */
+    #homenagem-strip {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      position: relative; overflow: hidden;
+    }
+    #homenagem-strip::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(199,165,107,.05) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    #homenagem-strip::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    }
+
+    .homenagem-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 2rem;
+      padding: 2.8rem 0;
+    }
+
+    /* Vela SVG animada */
+    .homenagem-candle {
+      flex-shrink: 0;
+      width: 48px; height: 80px;
+      position: relative;
+    }
+
+    .homenagem-text {
+      flex: 1;
+    }
+    .homenagem-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: .4rem;
+    }
+    .homenagem-text h2 em {
+      font-style: italic;
+      color: var(--secondary);
+    }
+    .homenagem-text p {
+      font-size: .85rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    .homenagem-year {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 1.2rem 2rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(199,165,107,.25);
+      border-radius: var(--radius-md);
+    }
+    .homenagem-year strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 900;
+      color: var(--secondary); line-height: 1;
+    }
+    .homenagem-year span {
+      font-size: .68rem; font-weight: 600;
+      color: rgba(255,255,255,.5);
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+
+    /* ============================================================
+       HISTORIA — BLOCO NARRATIVO
+    ============================================================ */
+    #historia {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+
+    .historia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .historia-text .section-label { margin-bottom: 1rem; }
+    .historia-text .section-title { margin-bottom: 1.6rem; }
+
+    .historia-text p {
+      color: var(--gray);
+      font-size: .92rem;
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+    .historia-text p:last-of-type { margin-bottom: 0; }
+
+    /* Pullquote */
+    .historia-quote {
+      margin: 2rem 0;
+      padding: 1.5rem 1.8rem;
+      border-left: 3px solid var(--secondary);
+      background: rgba(199,165,107,.06);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+    .historia-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 700;
+      color: var(--primary-dark);
+      font-style: italic;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+    .historia-quote cite {
+      display: block;
+      margin-top: .6rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: .72rem; font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+
+    /* Visual com colagem */
+    .historia-visual { position: relative; }
+
+    .hist-img-main {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      box-shadow: var(--shadow-lg);
+    }
+    .hist-img-main img { height: 100%; }
+
+    /* Placa de homenagem flutuante */
+    .hist-placa {
+      position: absolute;
+      bottom: -2rem; left: -2.5rem;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.6rem;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      min-width: 200px;
+    }
+    .hist-placa-line {
+      width: 32px; height: 2px;
+      background: var(--secondary); border-radius: 2px;
+      margin-bottom: .8rem;
+    }
+    .hist-placa strong {
+      display: block;
+      font-size: .82rem; font-weight: 700;
+      color: var(--primary-dark); line-height: 1.3;
+    }
+    .hist-placa span {
+      font-size: .7rem; color: var(--gray);
+      margin-top: .25rem; display: block;
+    }
+
+    /* Ano no topo direito */
+    .hist-year-badge {
+      position: absolute;
+      top: -1rem; right: -1.5rem;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.3rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+    .hist-year-badge strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 900;
+      line-height: 1; color: var(--secondary);
+    }
+    .hist-year-badge span {
+      font-size: .62rem; font-weight: 600;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+
+    /* ============================================================
+       LINHA DO TEMPO
+    ============================================================ */
+    #timeline {
+      padding: 7rem 0;
+      background: var(--light);
+    }
+
+    .timeline-header {
+      text-align: center; max-width: 600px;
+      margin: 0 auto 4.5rem;
+    }
+    .timeline-header p { color: var(--gray); font-size: .93rem; margin-top: .8rem; }
+
+    .timeline-track {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Linha central vertical */
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%; transform: translateX(-50%);
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 2px;
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 3rem;
+      align-items: start;
+    }
+    .tl-item:last-child { margin-bottom: 0; }
+
+    /* Alternado: items pares ficam à direita */
+    .tl-item.right .tl-content { grid-column: 3; grid-row: 1; }
+    .tl-item.right .tl-dot-col { grid-column: 2; grid-row: 1; }
+    .tl-item.right .tl-empty    { grid-column: 1; grid-row: 1; }
+    .tl-item.left  .tl-content { grid-column: 1; grid-row: 1; text-align: right; }
+    .tl-item.left  .tl-dot-col { grid-column: 2; grid-row: 1; }
+    .tl-item.left  .tl-empty    { grid-column: 3; grid-row: 1; }
+
+    .tl-dot-col {
+      display: flex; justify-content: center; align-items: flex-start;
+      padding-top: .3rem;
+    }
+
+    .tl-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 4px rgba(31,78,121,.12);
+      flex-shrink: 0;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      position: relative; z-index: 1;
+    }
+    .tl-item:hover .tl-dot {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 6px rgba(199,165,107,.18);
+    }
+    .tl-dot.gold { border-color: var(--secondary); background: var(--secondary); }
+    .tl-dot.gold::after {
+      content: '';
+      position: absolute; inset: -6px;
+      border: 1px solid rgba(199,165,107,.3);
+      border-radius: 50%;
+    }
+
+    .tl-content {
+      padding: 0 1.8rem;
+    }
+
+    .tl-year {
+      font-size: .68rem; font-weight: 800;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: .4rem;
+    }
+
+    .tl-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .tl-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(31,78,121,.25);
+    }
+    .tl-card.special {
+      border-color: rgba(199,165,107,.4);
+      background: rgba(199,165,107,.04);
+    }
+
+    .tl-card h4 {
+      font-size: .9rem; font-weight: 700;
+      color: var(--primary-dark); margin-bottom: .4rem;
+    }
+    .tl-card p {
+      font-size: .81rem; color: var(--gray); line-height: 1.75;
+    }
+
+    /* ============================================================
+       MVV — MISSAO VISAO VALORES
+    ============================================================ */
+    #mvv {
+      padding: 7rem 0;
+      background: var(--white);
+    }
+
+    .mvv-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .mvv-header p { color: var(--gray); font-size: .93rem; margin-top: .8rem; }
+
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .mvv-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.4rem 2rem;
+      box-shadow: var(--shadow-sm);
+      position: relative; overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .mvv-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .mvv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .mvv-card:hover::before { transform: scaleX(1); }
+
+    .mvv-icon {
+      width: 52px; height: 52px;
+      border: 1.5px solid var(--border);
+      background: rgba(31,78,121,.06);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.4rem;
+    }
+    .mvv-icon svg { width: 26px; height: 26px; }
+
+    .mvv-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: .65rem; }
+    .mvv-card p  { color: var(--gray); font-size: .87rem; line-height: 1.85; }
+
+    /* ============================================================
+       LIDERANCA — PCA
+    ============================================================ */
+    #lideranca {
+      padding: 7rem 0;
+      background: var(--light);
+    }
+
+    .lideranca-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .lideranca-header p { color: var(--gray); font-size: .93rem; margin-top: .8rem; }
+
+    .pca-grid {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    /* Cartão da PCA */
+    .pca-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .pca-img {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
+    .pca-img img { height: 100%; }
+
+    /* Gradiente de legibilidade */
+    .pca-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(18,58,93,.8) 0%, transparent 60%);
+    }
+
+    .pca-gold-bar {
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--secondary), #e8c47a, var(--secondary));
+    }
+
+    .pca-info {
+      padding: 1.8rem;
+    }
+    .pca-role {
+      font-size: .65rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--secondary); margin-bottom: .4rem;
+    }
+    .pca-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 900;
+      color: var(--primary-dark); line-height: 1.2;
+      margin-bottom: .5rem;
+    }
+    .pca-divider {
+      width: 36px; height: 2px;
+      background: var(--secondary); border-radius: 2px;
+      margin: .8rem 0;
+    }
+    .pca-desc {
+      font-size: .82rem; color: var(--gray); line-height: 1.75;
+    }
+
+    /* Texto da PCA */
+    .pca-text .section-label { margin-bottom: 1rem; }
+    .pca-text .section-title { margin-bottom: 1.4rem; }
+    .pca-text p {
+      color: var(--gray); font-size: .92rem; line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    /* Mensagem da PCA em destaque */
+    .pca-mensagem {
+      margin-top: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(31,78,121,.06), rgba(199,165,107,.06));
+      border: 1px solid rgba(199,165,107,.25);
+      border-radius: var(--radius-md);
+      position: relative;
+    }
+    .pca-mensagem::before {
+      content: '"';
+      position: absolute;
+      top: -.5rem; left: 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem; font-weight: 900;
+      color: var(--secondary);
+      opacity: .25;
+      line-height: 1;
+    }
+    .pca-mensagem p {
+      font-family: 'Playfair Display', serif;
+      font-size: .98rem; font-style: italic;
+      color: var(--primary-dark); line-height: 1.65;
+      margin-bottom: 0;
+    }
+    .pca-mensagem cite {
+      display: block; margin-top: .8rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: .72rem; font-weight: 700;
+      color: var(--secondary); letter-spacing: .08em;
+      text-transform: uppercase; font-style: normal;
+    }
+
+    /* ============================================================
+       ESTATISTICAS
+    ============================================================ */
+    #stats {
+      padding: 5.5rem 0;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      position: relative; overflow: hidden;
+    }
+    #stats::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(199,165,107,.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    #stats::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    }
+
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1rem; position: relative; z-index: 1;
+    }
+    .stat-card {
+      text-align: center; padding: 2.8rem 1.5rem;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      transition: background var(--transition), transform var(--transition);
+    }
+    .stat-card:hover { background: rgba(255,255,255,.1); transform: translateY(-4px); }
+    .stat-icon-wrap {
+      width: 48px; height: 48px;
+      background: rgba(199,165,107,.15);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .stat-icon-wrap svg { width: 24px; height: 24px; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 900; color: var(--white); line-height: 1; margin-bottom: .45rem;
+    }
+    .stat-number .suffix { color: var(--secondary); font-size: .75em; }
+    .stat-label { color: rgba(255,255,255,.6); font-size: .78rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+
+    /* ============================================================
+       CTA
+    ============================================================ */
+    #cta {
+      padding: 7rem 0;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #cta::before, #cta::after { content: ''; position: absolute; border-radius: 50%; border: 1px solid rgba(199,165,107,.14); }
+    #cta::before { width: 520px; height: 520px; top: -220px; left: -160px; }
+    #cta::after  { width: 420px; height: 420px; bottom: -160px; right: -110px; }
+    .cta-content { position: relative; z-index: 1; }
+    .cta-content .section-label { color: var(--secondary); background: rgba(199,165,107,.12); }
+    .cta-content .section-title { color: var(--white); margin: .5rem 0 1.2rem; }
+    .cta-content .section-title span { color: var(--secondary); }
+    .cta-sub { color: rgba(255,255,255,.68); font-size: .98rem; max-width: 480px; margin: 0 auto 2.5rem; }
+    .cta-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+    .cta-actions .btn-primary { padding: 1rem 2.3rem; font-size: .95rem; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer { background: var(--primary-dark); color: rgba(255,255,255,.58); padding: 5rem 0 2rem; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .footer-brand p { font-size: .84rem; line-height: 1.85; max-width: 280px; margin-top: 1.1rem; }
+    .footer-social { display: flex; gap: .75rem; margin-top: 1.6rem; }
+    .social-btn { width: 36px; height: 36px; background: rgba(255,255,255,.07); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; transition: background var(--transition), transform var(--transition), color var(--transition); cursor: pointer; color: rgba(255,255,255,.65); border: 1px solid rgba(255,255,255,.1); }
+    .social-btn:hover { background: var(--secondary); transform: translateY(-3px); color: var(--white); border-color: transparent; }
+    .footer-col h4 { color: var(--white); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1.4rem; padding-bottom: .6rem; border-bottom: 1px solid rgba(199,165,107,.25); }
+    .footer-links { display: flex; flex-direction: column; gap: .65rem; }
+    .footer-links a { font-size: .83rem; transition: color var(--transition), padding-left var(--transition); }
+    .footer-links a:hover { color: var(--secondary); padding-left: 5px; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: .75rem; font-size: .83rem; margin-bottom: .9rem; }
+    .footer-contact-icon { width: 18px; height: 18px; flex-shrink: 0; margin-top: .15rem; }
+    .footer-contact-icon svg { width: 100%; height: 100%; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: .78rem; }
+    .footer-bottom .gold { color: var(--secondary); }
+
+    /* ============================================================
+       SCROLL REVEAL
+    ============================================================ */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .historia-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .hist-img-main { aspect-ratio: 16/9; }
+      .hist-placa { left: auto; right: 1rem; bottom: -1.5rem; }
+      .hist-year-badge { right: auto; left: -1rem; }
+      .pca-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .mvv-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .timeline-track::before { left: 24px; transform: none; }
+      .tl-item { grid-template-columns: 48px 1fr; }
+      .tl-item.right .tl-content,
+      .tl-item.left  .tl-content { grid-column: 2; grid-row: 1; text-align: left; padding-left: 1.2rem; padding-right: 0; }
+      .tl-item.right .tl-dot-col,
+      .tl-item.left  .tl-dot-col { grid-column: 1; grid-row: 1; justify-content: center; }
+      .tl-item.right .tl-empty,
+      .tl-item.left  .tl-empty   { display: none; }
+    }
+    @media (max-width: 768px) {
+      nav, .header-cta { display: none; }
+      .hamburger { display: flex; }
+      .mvv-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .homenagem-inner { flex-direction: column; text-align: center; }
+      .homenagem-year { align-self: center; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header id="header">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="index.html" class="logo">
+         <img src="public/img/logo.jfif" alt="logo"
+             style="max-width: 50px; max-height: 50px; border-radius: 50%;">
+          <div class="logo-text">
+            <strong>Colégio Santa ana & Noesa</strong>
+            <small>Inst. Médio Politécnico Santa Ana e Noesa</small>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html" class="active">Sobre</a></li>
+            <li><a href="index.html#cursos">Cursos</a></li>
+            <li><a href="/preco">Preços</a></li>
+            <li><a href="laboratorios.html">Instalações</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+          </ul>
+        </nav>
+
+        <a href="index.html#cta" class="btn-primary header-cta">Inscrever-se</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <ul class="mobile-menu" id="mobileMenu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="index.html#cursos">Cursos</a></li>
+        <li><a href="/preco">Preços</a></li>
+        <li><a href="laboratorios.html">Instalações</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+        <li><a href="index.html#cta" class="btn-primary">Inscrever-se</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       PAGE HERO noemia
+  ============================================================ -->
+  <section id="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-geo"></div>
+    <div class="page-hero-line"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href="index.html">Início</a>
+          <span class="sep"></span>
+          <span class="current">Sobre o Instituto</span>
+        </nav>
+        <h1 class="page-hero-title">
+          Uma história de<br/><span>dedicação e memória</span>
+        </h1>
+        <p class="page-hero-sub">
+          Fundado em 1996 em homenagem à memória de uma mulher que marcou a vida de quem a conheceu, o IMPSAN nasceu do amor, da gratidão e do compromisso com o futuro de Angola.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAIXA DE HOMENAGEM
+  ============================================================ -->
+  <div id="homenagem-strip">
+    <div class="container">
+      <div class="homenagem-inner">
+
+        <!-- Vela SVG -->
+        <svg class="homenagem-candle" viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Chama -->
+          <ellipse cx="24" cy="12" rx="5" ry="8" fill="url(#flame1)" opacity=".9">
+            <animateTransform attributeName="transform" type="scale"
+              values="1 1;1.08 1.12;0.95 1.05;1 1" dur="1.8s" repeatCount="indefinite"
+              additive="sum" attributeType="XML" from="0 0" to="0 0"/>
+          </ellipse>
+          <ellipse cx="24" cy="15" rx="3" ry="5" fill="url(--flame2)" fill="rgba(255,220,100,.7)">
+            <animateTransform attributeName="transform" type="translate"
+              values="0 0;1 -1;-1 0;0 0" dur="1.4s" repeatCount="indefinite"/>
+          </ellipse>
+          <!-- Pavio -->
+          <line x1="24" y1="20" x2="24" y2="26" stroke="#8B6914" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Corpo da vela -->
+          <rect x="16" y="26" width="16" height="46" rx="3" fill="url(#candleGrad)"/>
+          <!-- Brilho lateral -->
+          <rect x="18" y="28" width="4" height="38" rx="2" fill="rgba(255,255,255,.18)"/>
+          <!-- Cera derretida -->
+          <path d="M20 26 Q24 23 28 26" stroke="rgba(255,255,255,.3)" stroke-width="1" fill="none"/>
+          <defs>
+            <radialGradient id="flame1" cx="50%" cy="70%" r="50%">
+              <stop offset="0%" stop-color="#FFF176"/>
+              <stop offset="50%" stop-color="#FFA726"/>
+              <stop offset="100%" stop-color="#E64A19" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="candleGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#D4A843"/>
+              <stop offset="40%" stop-color="#F0C878"/>
+              <stop offset="100%" stop-color="#B8903A"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div class="homenagem-text">
+          <h2>Em memória de <em>Noemia Dos Santos</em></h2>
+          <p>
+            Este instituto foi criado pela actual Presidente do Conselho de Administração como uma homenagem perpétua à sua falecida mãe, Noemia dos Santos — uma mulher de fé, generosidade e amor incondicional. O nome da instituição é o seu legado vivo: cada estudante que aqui passa honra a memória de quem inspirou tudo isto.
+          </p>
+        </div>
+
+        <div class="homenagem-year">
+          <strong>1996</strong>
+          <div style="width:30px;height:2px;background:var(--secondary);margin:.5rem auto;border-radius:2px;"></div>
+          <span>Ano de Fundação</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HISTORIA em crescimento
+  ============================================================ -->
+  <section id="historia">
+    <div class="container">
+      <div class="historia-grid">
+
+        <div class="historia-text reveal">
+          <span class="section-label">A Nossa História</span>
+          <h2 class="section-title">Nascidos do amor,<br/>crescidos com <span>propósito</span></h2>
+
+          <p>
+            O Instituto Médio Politécnico Santa Ana e Noesa foi fundado em 1996 pela actual Presidente do Conselho de Administração, movida pelo desejo de perpetuar a memória da sua mãe, Santa Ana e Noesa, através da educação — o bem mais transformador que se pode oferecer a uma criança, a uma família e a um povo.
+          </p>
+
+          <div class="historia-quote">
+            <p>
+              "O nome desta instituição não é apenas um título. É uma promessa de nunca esquecer quem nos deu a vida e os valores que nos tornaram quem somos."
+            </p>
+            <cite>Presidente do Conselho de Administração — IMPSAN</cite>
+          </div>
+
+          <p>
+            Desde a sua fundação, o instituto cresceu de forma sólida e consistente, tornando-se uma referência no ensino médio técnico em Luanda. A visão da sua fundadora sempre foi clara: criar um espaço onde a qualidade académica e os valores humanos caminhassem lado a lado.
+          </p>
+          <p>
+            Ao longo de quase três décadas de existência, o IMPSAN formou milhares de técnicos que hoje contribuem activamente para o desenvolvimento de Angola nas áreas da saúde, da gestão empresarial e da tecnologia.
+          </p>
+        </div>
+
+        <div class="historia-visual reveal" style="transition-delay:.18s">
+          <div class="hist-year-badge">
+            <strong>1996</strong>
+            <span>Fundação</span>
+          </div>
+
+          <div class="hist-img-main">
+            <img src="public/img/fundo2.jpeg" alt="Instituto em crescimento" loading="lazy"/>
+          </div>
+
+          <div class="hist-placa">
+            <div class="hist-placa-line"></div>
+            <strong>Santa Ana e Noesa</strong>
+            <span>A mulher que inspirou este instituto</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LINHA DO TEMPO
+  ============================================================ -->
+  <section id="timeline">
+    <div class="container">
+      <div class="timeline-header reveal">
+        <span class="section-label">Cronologia</span>
+        <h2 class="section-title">Quase 30 anos de<br/><span>história e crescimento</span></h2>
+        <p>Os momentos que definiram o percurso do Instituto Médio Politécnico Santa Ana e Noesa desde a sua fundação.</p>
+      </div>
+
+      <div class="timeline-track">
+
+        <div class="tl-item left reveal">
+          <div class="tl-content">
+            <div class="tl-year">1996</div>
+            <div class="tl-card special">
+              <h4>Fundação do Instituto</h4>
+              <p>O IMPSAN abre as suas portas em Luanda, fundado pela actual PCA em homenagem à sua mãe, Santa Ana e Noesa. O instituto inicia a sua actividade com o curso de Contabilidade e Gestão.</p>
+            </div>
+          </div>
+          <div class="tl-dot-col"><span class="tl-dot gold"></span></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <div class="tl-item right reveal" style="transition-delay:.1s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot-col"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <div class="tl-year">2001</div>
+            <div class="tl-card">
+              <h4>Abertura do Curso de Enfermagem</h4>
+              <p>Face à crescente necessidade de profissionais de saúde em Angola, o instituto lança o curso de Enfermagem e Análises Clínicas, ampliando a sua oferta formativa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item left reveal" style="transition-delay:.15s">
+          <div class="tl-content">
+            <div class="tl-year">2006</div>
+            <div class="tl-card">
+              <h4>Primeira Década e Expansão</h4>
+              <p>O instituto celebra 10 anos de actividade com a primeira grande reforma das instalações e a criação de novos laboratórios de ciências da saúde, respondendo ao aumento do número de estudantes.</p>
+            </div>
+          </div>
+          <div class="tl-dot-col"><span class="tl-dot"></span></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <div class="tl-item right reveal" style="transition-delay:.2s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot-col"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <div class="tl-year">2012</div>
+            <div class="tl-card">
+              <h4>Curso de Informática</h4>
+              <p>Em resposta à revolução digital que transformava a economia angolana, o IMPSAN lança o curso de Informática, dotando os laboratórios de tecnologia com equipamento moderno e ligação à internet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item left reveal" style="transition-delay:.25s">
+          <div class="tl-content">
+            <div class="tl-year">2018</div>
+            <div class="tl-card">
+              <h4>Renovação Pedagógica</h4>
+              <p>Implementação de novos métodos de ensino baseados em projectos e simulação real. Os laboratórios são reequipados e o instituto adopta um modelo pedagógico centrado na prática profissional.</p>
+            </div>
+          </div>
+          <div class="tl-dot-col"><span class="tl-dot"></span></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <div class="tl-item right reveal" style="transition-delay:.3s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot-col"><span class="tl-dot"></span></div>
+          <div class="tl-content">
+            <div class="tl-year">2023</div>
+            <div class="tl-card">
+              <h4>Renovação Total dos Laboratórios</h4>
+              <p>Grande investimento na modernização de todos os laboratórios, com aquisição de equipamento de última geração, instalação de fibra óptica e criação do laboratório de simulação clínica.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item left reveal" style="transition-delay:.35s">
+          <div class="tl-content">
+            <div class="tl-year">2025</div>
+            <div class="tl-card special">
+              <h4>Quase 30 Anos — Rumo ao Futuro</h4>
+              <p>O IMPSAN olha para o futuro com uma nova geração de líderes formados sob os valores da sua fundadora, reafirmando o compromisso com a excelência académica e o desenvolvimento de Angola.</p>
+            </div>
+          </div>
+          <div class="tl-dot-col"><span class="tl-dot gold"></span></div>
+          <div class="tl-empty"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MISSAO VISAO VALORES
+  ============================================================ -->
+  <section id="mvv">
+    <div class="container">
+      <div class="mvv-header reveal">
+        <span class="section-label">Identidade Institucional</span>
+        <h2 class="section-title">Missão, Visão<br/>e <span>Valores</span></h2>
+        <p>Os pilares que guiam cada decisão, cada aula e cada estudante que passa pelas portas do IMPSAN.</p>
+      </div>
+
+      <div class="mvv-grid">
+
+        <div class="mvv-card reveal">
+          <div class="mvv-icon">
+            <svg viewBox="0 0 26 26" fill="none">
+              <circle cx="13" cy="13" r="10" stroke="#1F4E79" stroke-width="1.8"/>
+              <path d="M9 13l3 3 5-5" stroke="#C7A56B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Missão</h3>
+          <p>Proporcionar uma educação técnica e científica de excelência, formando profissionais competentes, éticos e comprometidos com o desenvolvimento socioeconómico de Angola e do continente africano, honrando o legado de quem nos inspirou.</p>
+        </div>
+
+        <div class="mvv-card reveal" style="transition-delay:.12s">
+          <div class="mvv-icon">
+            <svg viewBox="0 0 26 26" fill="none">
+              <path d="M13 4L4 8.5v5c0 4.7 3.8 9 9 10.5 5.2-1.5 9-5.8 9-10.5v-5L13 4z" stroke="#1F4E79" stroke-width="1.8" stroke-linejoin="round"/>
+              <circle cx="13" cy="13" r="3" stroke="#C7A56B" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <h3>Visão</h3>
+          <p>Ser reconhecido como o instituto de referência em ensino médio técnico em Angola, distinguindo-se pela inovação pedagógica, pela qualidade dos seus diplomados e pelo impacto positivo que estes têm na transformação do país.</p>
+        </div>
+
+        <div class="mvv-card reveal" style="transition-delay:.24s">
+          <div class="mvv-icon">
+            <svg viewBox="0 0 26 26" fill="none">
+              <path d="M13 3l2.5 6H22l-5.5 4 2 6.5L13 16l-5.5 3.5 2-6.5L4 9h6.5z" stroke="#1F4E79" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Valores</h3>
+          <p>Excelência académica, integridade, memória e gratidão, responsabilidade social, espírito colaborativo, respeito pela diversidade angolana e compromisso permanente com o desenvolvimento dos nossos estudantes e das suas famílias.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LIDERANCA — PCA
+  ============================================================ -->
+  <section id="lideranca">
+    <div class="container">
+      <div class="lideranca-header reveal">
+        <span class="section-label">Liderança</span>
+        <h2 class="section-title">A Presidente do<br/><span>Conselho de Administração</span></h2>
+        <p>A mulher que transformou a dor da perda em propósito, e o propósito numa instituição que hoje muda vidas em Angola.</p>
+      </div>
+
+      <div class="pca-grid">
+
+        <!-- Cartão visual da PCA -->
+        <div class="pca-card reveal">
+          <div class="pca-gold-bar"></div>
+          <div class="pca-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Presidente do Conselho de Administração" loading="lazy"/>
+            <div class="pca-img-overlay"></div>
+          </div>
+          <div class="pca-info">
+            <div class="pca-role">Presidente do Conselho de Administração</div>
+            <div class="pca-name">Instituto Médio Politécnico<br/>Santa Ana e Noesa</div>
+            <div class="pca-divider"></div>
+            <p class="pca-desc">Fundadora e líder do IMPSAN desde 1996. Dedicou a sua vida a transformar a memória da sua mãe num legado de educação e esperança para Angola.</p>
+          </div>
+        </div>
+
+        <!-- Texto da PCA -->
+        <div class="pca-text reveal" style="transition-delay:.15s">
+          <span class="section-label">Uma história pessoal</span>
+          <h3 class="section-title">Transformar a perda<br/>em <span>legado eterno</span></h3>
+
+          <p>
+            A fundação do Instituto Médio Politécnico Santa Ana e Noesa nasceu de um acto profundamente humano: a necessidade de honrar quem amamos depois de os perdermos. A actual Presidente do Conselho de Administração perdeu a sua mãe, Santa Ana e Noesa, e escolheu transformar essa perda numa forma de serviço permanente à comunidade angolana.
+          </p>
+          <p>
+            Ao criar esta instituição em 1996, ela não estava apenas a abrir uma escola — estava a escrever uma carta para o futuro, assinada com o nome da mulher que lhe ensinou o valor da educação, da dignidade e do amor ao próximo.
+          </p>
+          <p>
+            Sob a sua liderança, o IMPSAN cresceu de forma sustentada ao longo de quase três décadas, mantendo sempre o espírito que o fundou: a crença de que a educação é o caminho mais seguro para a liberdade e para a prosperidade de um povo.
+          </p>
+
+          <div class="pca-mensagem">
+            <p>
+              Cada estudante que entra neste instituto é, para mim, uma continuação do legado da minha mãe. Ela não chegou a ver esta escola, mas vive em cada diplomado que sai daqui pronto para servir Angola.
+            </p>
+            <cite>Presidente do Conselho de Administração — IMPSAN</cite>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ESTATISTICAS
+  ============================================================ -->
+  <section id="stats">
+    <div class="container">
+      <div class="stats-grid">
+
+        <div class="stat-card reveal">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3L2 8l10 5 10-5-10-5zM2 16l10 5 10-5M2 12l10 5 10-5" stroke="#C7A56B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="2400">0<span class="suffix">+</span></div>
+          <div class="stat-label">Alunos Matriculados</div>
+        </div>
+
+        <div class="stat-card reveal" style="transition-delay:.1s">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="4" stroke="#C7A56B" stroke-width="1.8"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#C7A56B" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="85">0<span class="suffix">+</span></div>
+          <div class="stat-label">Docentes Qualificados</div>
+        </div>
+
+        <div class="stat-card reveal" style="transition-delay:.2s">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="17" rx="2" stroke="#C7A56B" stroke-width="1.8"/>
+              <path d="M8 2v4M16 2v4M3 10h18" stroke="#C7A56B" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="29">0<span class="suffix">+</span></div>
+          <div class="stat-label">Anos de História</div>
+        </div>
+
+        <div class="stat-card reveal" style="transition-delay:.3s">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="#C7A56B" stroke-width="1.8"/>
+              <path d="M8 12l3 3 5-5" stroke="#C7A56B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="stat-number" data-target="94">0<span class="suffix">%</span></div>
+          <div class="stat-label">Taxa de Aprovação</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+  ============================================================ -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta-content reveal">
+        <span class="section-label">Candidaturas 2025 / 2026</span>
+        <h2 class="section-title">Faça parte desta<br/><span>história de Angola</span></h2>
+        <p class="cta-sub">Inscreva-se no instituto que nasceu do amor e que todos os dias trabalha para transformar o futuro dos jovens angolanos.</p>
+        <div class="cta-actions">
+          <a href="index.html#cta" class="btn-primary">Candidatar-se Agora</a>
+          <a href="index.html#footer" class="btn-ghost">Falar Connosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="logo">
+             <img src="public/img/logo.jfif" alt="logo" loading="lazy"
+             style="max-width: 40px; max-height: 40px; border-radius: 50%;">
+            <div class="logo-text">
+              <strong>Santa ana & noesa</strong>
+              <small>Santa Ana e Noesa</small>
+            </div>
+          </a>
+          <p>Formando profissionais comprometidos com o desenvolvimento de Angola e do continente africano através da educação técnica de qualidade.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" title="Facebook">f</a>
+            <a href="#" class="social-btn" title="Instagram">ig</a>
+            <a href="#" class="social-btn" title="YouTube">yt</a>
+            <a href="#" class="social-btn" title="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <!-- Links Rapidos -->
+        <div class="footer-col">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre o Instituto</a></li>
+            <li><a href="#cursos">Cursos Oferecidos</a></li>
+            <li><a href="#precos">Tabela de Preços</a></li>
+            <li><a href="laboratorios.html">Laboratórios</a></li>
+            <li><a href="#cta">Candidaturas</a></li>
+          </ul>
+        </div>
+
+        <!-- Cursos -->
+        <div class="footer-col">
+          <h4>Cursos</h4>
+          <ul class="footer-links">
+            <li><a href="#cursos">Contabilidade e Gestão</a></li>
+            <li><a href="#cursos">Enfermagem</a></li>
+            <li><a href="#cursos">Análises Clínicas</a></li>
+            <li><a href="#cursos">Informática</a></li>
+          </ul>
+        </div>
+
+        <!-- Contactos -->
+        <div class="footer-col">
+          <h4>Contactos</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><path d="M9 1C6.24 1 4 3.24 4 6c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 9 4a1.5 1.5 0 0 1 0 3.5z" fill="rgba(255,255,255,0.5)"/></svg>
+            </div>
+            <span>Luanda, Angola — Br. Vila Alice - Nelito Soares, rua da liberde, nª 135/137 </span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v1C2 11.404 6.596 16 13.5 16h1a1.5 1.5 0 0 0 1.5-1.5v-1.5a1 1 0 0 0-.6-.92l-2.5-1a1 1 0 0 0-1.1.25l-.88.88A7.02 7.02 0 0 1 7.3 8.1l.88-.88a1 1 0 0 0 .25-1.1l-1-2.5A1 1 0 0 0 6.5 3L5 3c-.55 0-1.5.448-1.5 1z" fill="rgba(255,255,255,0.5)"/></svg>
+            </div>
+            <span>+244 946 725 869</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="1.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M2 6l7 5 7-5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <span>info@impsan.ao</span>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.3"/><path d="M9 5v4l2.5 2.5" stroke="rgba(255,255,255,0.5)" stroke-width="1.3" stroke-linecap="round"/></svg>
+            </div>
+            <span>Segunda a Sexta: 07h00 – 18h00</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2027 Instituto Médio Politécnico Santa Ana e Noesa. Todos os direitos reservados.</p>
+        <p>Desenvolvido pelo <span class="gold">Carlos Quitumba</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Hamburger
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+
+    // Scroll reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Counter animation
+    function animateCount(el, target, duration = 1800) {
+      let start = 0;
+      const step  = Math.ceil(target / (duration / 16));
+      const suffix = el.querySelector('.suffix') ? el.querySelector('.suffix').outerHTML : '';
+      const timer = setInterval(() => {
+        start = Math.min(start + step, target);
+        el.innerHTML = start.toLocaleString('pt-AO') + suffix;
+        if (start >= target) clearInterval(timer);
+      }, 16);
+    }
+    const statsObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCount(e.target, parseInt(e.target.dataset.target));
+          statsObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-number[data-target]').forEach(el => statsObs.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "site-noesa",
+  "version": "1.0.0",
+  "description": "site officil para o instituto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Quitumba",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "prisma": "^5.22.0"
+  }
+}

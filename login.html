@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestão de Preços</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f6f9;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#0f4c81;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:600;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#0f4c81;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#0f4c81;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#0c3c64;
+}
+
+#msg{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+@media(max-width:600px){
+    .container{
+        padding:20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Actualizar Preços</h1>
+
+    <form id="priceForm">
+
+        <div class="form-group">
+            <label>Matrícula</label>
+            <input type="number" id="matricula" value="15000">
+        </div>
+
+        <div class="form-group">
+            <label>Propina</label>
+            <input type="number" id="propina">
+        </div>
+
+        <div class="form-group">
+            <label>Manual</label>
+            <input type="number" id="manual" value="6000">
+        </div>
+
+        <div class="form-group">
+            <label>Cartão</label>
+            <input type="number" id="cartao" value="3000">
+        </div>
+
+        <div class="form-group">
+            <label>Uniforme PUNIV</label>
+            <input type="number" id="uniforme_puniv">
+        </div>
+
+        <div class="form-group">
+            <label>Uniforme Enfermagem</label>
+            <input type="number" id="uniforme_enfermagem">
+        </div>
+
+        <button type="submit">
+            Guardar Alterações
+        </button>
+
+    </form>
+
+    <div id="msg"></div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("priceForm");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const dados = {
+        matricula: Number(document.getElementById("matricula").value),
+        propina:Number( document.getElementById("propina").value) || null,
+        manual: Number(document.getElementById("manual").value),
+        cartao: Number(document.getElementById("cartao").value),
+        uniforme_puniv:Number( document.getElementById("uniforme_puniv").value) || null,
+        uniforme_enfermagem: Number(document.getElementById("uniforme_enfermagem").value) || null
+    };
+
+    try{
+
+        const response = await fetch("/post/price",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(dados)
+        });
+
+        const result = await response.json();
+
+        msg.innerHTML = " Dados enviados com sucesso!";
+        msg.style.color = "green";
+
+        console.log(result);
+
+    }catch(error){
+
+        msg.innerHTML = "Erro ao enviar dados.";
+        msg.style.color = "red";
+
+        console.error(error);
+    }
+
+});
+
+</script>
+
+</body>
+</html>

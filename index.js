@@ -24,7 +24,9 @@ app.get("/",function(req,res){
 
 //rota de precos, para a unca pagina dinamica. a unica dinamica
 app.get("/preco",async function(req,res){
-    const data =await prisma.price.findFirst();
+    const data =await prisma.price.create({
+        data:req.body
+    });
     console.log(data)
     res.render("preco",{
         propina:data.propina,
@@ -33,7 +35,8 @@ app.get("/preco",async function(req,res){
         uniforme_enfermagem:data.uniforme_enfermagem,
         manual:data.manual,
         matricula:data.matricula
-    });
+    },
+);
 })
 
 //rota para aceder ao painel preciso a proteger
@@ -44,16 +47,7 @@ app.get("/novela",function(req,res){
 
 
 app.post("/post/price", async function(req,res){
-    const response = await prisma.price.create({
-  data: {
-    matricula: 15000,
-    propina: 5000,
-    manual: 6000,
-    cartao: 3000,
-    uniforme_puniv: null,
-    uniforme_enfermagem: null
-  }
-});
+    const response = await prisma.price.findMany()
 res.json({response})
 })
 // /Listen do serer/

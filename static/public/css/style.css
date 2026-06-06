@@ -237,7 +237,7 @@
 
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('../img/0C91D96F-0F69-4AB4-B40F-B9742C6153A3.jpeg') center/cover no-repeat;
+      background: url('../img/fundo2.jpeg') center/cover no-repeat;
       transform: scale(1.05);
       animation: slowZoom 22s ease-in-out infinite alternate;
     }

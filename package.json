@@ -1,20 +1,22 @@
 {
   "name": "site-noesa",
   "version": "1.0.0",
-  "description": "site officil para o instituto",
-  "main": "index.js",
+  "description": "Site oficial para o instituto",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "node server.js",
+    "postinstall": "prisma generate"
   },
   "author": "Carlos Quitumba",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.22.0",
-    "prisma": "^5.22.0"
-  },
-  "devDependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "mustache-express": "^1.3.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
   }
 }

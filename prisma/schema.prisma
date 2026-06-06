@@ -3,16 +3,16 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model price {
   id                  Int    @id @default(autoincrement())
-  matricula           Float? @db.Float
-  propina             Float? @db.Float
-  manual              Float? @db.Float
-  cartao              Float? @db.Float
-  uniforme_puniv      Float? @db.Float
-  uniforme_enfermagem Float? @db.Float
+  matricula           Float?
+  propina             Float?
+  manual              Float?
+  cartao              Float?
+  uniforme_puniv      Float?
+  uniforme_enfermagem Float?
 }

@@ -44,13 +44,7 @@ app.get("/novela",function(req,res){
 
 
 app.post("/post/price", async function(req,res){
-     const response =await prisma.price.update(
-        {
-            data:req.body,
-            where:{id:1}
-        }
-     ) 
-     res.json({response:req.body}); 
+     const response =await prisma.price.create(req.body) 
 })
 // /Listen do serer/
 app.listen(3000,function(){

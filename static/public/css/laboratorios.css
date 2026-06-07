@@ -1,6 +1,6 @@
  
     /* ============================================================
-       DESIGN TOKENS (identicos ao site principal)
+       DESIGN TOKENS (identicos ao site principal) hero-title
     ============================================================ */
     :root {
       --primary:      #1F4E79;
@@ -289,7 +289,7 @@
     .breadcrumb .current { color: var(--secondary); font-weight: 500; }
 
     .page-hero-title {
-      font-family: 'Playfair Display', serif;
+      font-family: cursive;
       font-size: clamp(2.4rem, 5vw, 3.8rem);
       font-weight: 900;
       color: var(--white);

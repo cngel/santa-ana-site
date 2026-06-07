@@ -1,6 +1,6 @@
 
     /* ============================================================
-       DESIGN TOKENS
+       DESIGN TOKENS hero-title
     ============================================================ */
     :root {
       --primary:      #1F4E79;
@@ -112,7 +112,7 @@
       padding: .65rem 1.4rem;
       border-radius: 99px; border: none; cursor: pointer;
       transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
-      box-shadow: 0 4px 20px rgba(199,165,107,.45);
+     ;
       white-space: nowrap; letter-spacing: .02em;
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(199,165,107,.55); filter: brightness(1.08); }
@@ -199,7 +199,7 @@
     .breadcrumb .current { color: var(--secondary); font-weight: 500; }
 
     .page-hero-title {
-      font-family: 'Playfair Display', serif;
+      font-family: cursive;
       font-size: clamp(2.4rem, 5vw, 3.8rem);
       font-weight: 900; color: var(--white); line-height: 1.08;
       margin-bottom: 1rem;

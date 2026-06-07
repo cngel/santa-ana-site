@@ -37,7 +37,7 @@
       overflow-x: hidden;
       line-height: 1.7;
     }
-
+/* hero-title */
     img { display: block; width: 100%; object-fit: cover; }
     a  { text-decoration: none; color: inherit; }
     ul { list-style: none; }
@@ -151,7 +151,7 @@
       border: none;
       cursor: pointer;
       transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
-      box-shadow: 0 4px 20px rgba(199,165,107,.45);
+      /* box-shadow: 0 4px 20px rgba(199,165,107,.45); */
       white-space: nowrap;
       letter-spacing: .02em;
     }
@@ -321,7 +321,7 @@
     }
 
     .hero-title {
-      font-family: 'Playfair Display', serif;
+      font-family: cursive;
       font-size: clamp(2.6rem, 6vw, 4.4rem);
       font-weight: 900;
       color: var(--white);

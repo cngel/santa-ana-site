@@ -180,7 +180,7 @@
       border-color: var(--white);
     }
 
-    /* Hamburger */
+    /* Hamburger hero */
     .hamburger {
       display: none;
       flex-direction: column;

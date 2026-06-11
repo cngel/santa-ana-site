@@ -53,7 +53,7 @@ a {
 ul {
   list-style: none;
 }
-
+/* page-hero */
 .container {
   width: min(1200px, 92vw);
   margin-inline: auto;
@@ -291,7 +291,7 @@ nav {
 .page-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80') center/cover no-repeat;
+  background: url('../img/recepcao.jpeg') center/cover no-repeat;
   transform: scale(1.06);
   animation: slowZoom 22s ease-in-out infinite alternate;
 }
